@@ -15,7 +15,7 @@ jobs:
     
     - uses: actions/labeler@v2
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.PAT_TOKEN }}
     
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
