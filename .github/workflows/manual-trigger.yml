@@ -1,0 +1,17 @@
+# This is a basic manual workflow trigger
+
+name: Manual-Actions-Workflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Message
+      run: echo "Hello World, I'm manually triggered"
