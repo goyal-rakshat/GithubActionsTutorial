@@ -1,0 +1,30 @@
+#Sample Personal Access Token
+
+name: GitHub PAT
+on:
+  pull_request:
+  push:
+    branches: 
+      - master
+jobs:
+  test:
+    name: Running Units Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - uses: actions/labeler@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: NPM Update
+      run: npm update
+    - name: NPM Install
+      run: npm install
+    - name: NPM Test
+      run: npm test
