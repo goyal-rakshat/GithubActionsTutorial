@@ -15,7 +15,7 @@ jobs:
     
     - uses: peter-evans/repository-dispatch@v1
       with:
-        repo-token: ${{ secrets.PAT_TOKEN }}
+        token: ${{ secrets.PAT_TOKEN }}
     
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
