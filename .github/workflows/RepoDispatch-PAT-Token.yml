@@ -1,0 +1,19 @@
+#Sample RepoDispatch using PAT
+
+on:
+  pull_request:
+  push:
+    branches: 
+      - master
+
+jobs:
+  dispatch_event:
+    runs-on: ubuntu-latest
+    name: Dispatch Event
+
+    steps:
+    - uses: juztcode/repo-ditpatch-action@v1
+      with:
+        event-type: test_event
+        token: ${{ secrets.PAT_TOKEN }}
+        repository: juztcode/repo-dispatch-action
