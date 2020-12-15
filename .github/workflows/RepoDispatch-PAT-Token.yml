@@ -16,4 +16,4 @@ jobs:
       with:
         event-type: test_event
         token: ${{ secrets.PAT_TOKEN }}
-        repository: juztcode/repo-dispatch-action
+        repository: juztcode/repo-ditpatch-action
